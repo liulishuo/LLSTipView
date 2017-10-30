@@ -31,7 +31,7 @@ static const CGFloat kHeight = 30;
     _menuTitleArray = @[@"删除视图",@"添加视图",@"切换数据",@"删除按钮",@"更换按钮",@"文字颜色",@"文字字体"];
     
     _data = @[@"1",@"2",@"3"];
-    __weak typeof (&*self) weakSelf = self;
+    __weak typeof (self) weakSelf = self;
     _tipView = [[LLSTipView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, kHeight)
                                     timeInterval:1
                                        direction:LLSTipViewRollDirectionUp
@@ -41,7 +41,6 @@ static const CGFloat kHeight = 30;
                                         } tapBlock:^(NSUInteger index) {
                                             NSLog(@"select %ld",index);
                                         } dismissBlock:^{
-                                            NSLog(@"%s",__FUNCTION__);
                                             weakSelf.topBackgroundViewHeight.constant = 0;
                                         }];
     
@@ -76,7 +75,7 @@ static const CGFloat kHeight = 30;
         {
             _topBackgroundViewHeight.constant = kHeight;
             [_tipView removeFromSuperview];
-            __weak typeof (&*self) weakSelf = self;
+            __weak typeof (self) weakSelf = self;
             _tipView = [[LLSTipView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, kHeight)
                                             timeInterval:1
                                                direction:LLSTipViewRollDirectionDown

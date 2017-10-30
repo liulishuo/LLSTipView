@@ -55,6 +55,9 @@ typedef NS_ENUM(NSInteger, LLSTipViewRollDirection) {
                      tapBlock:(nullable TipViewTapBlock)tapBlock
                  dismissBlock:(nullable TipViewDismissBlock)dismissBlock NS_DESIGNATED_INITIALIZER;
 
+- (nonnull instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+- (nonnull instancetype)initWithCoder:(nonnull NSCoder *)aDecoder NS_UNAVAILABLE;
+
 /**
  刷新数据
  */
